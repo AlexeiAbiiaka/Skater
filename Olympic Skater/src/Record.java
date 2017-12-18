@@ -15,11 +15,25 @@ public class Record {
 			
 		}
 	}
-
+	
+/********************************************************
+ * Purpose:        get speed for skater
+ *         
+ * Interface:
+ *     in:        none
+ *     out:       speed in km/h 
+ ********************************************************/
 	public double getSpeed() {
 		return 5d / (min * 60 + sec) / 3600;
 	}
 	
+/********************************************************
+ * Purpose:       prints record in min and sec
+ *         
+ * Interface:
+ *     in:        none
+ *     out:       min, sec
+ ********************************************************/	
 	public String toString() {
 		return format.format(min)+":"+format.format(sec);
 	}
