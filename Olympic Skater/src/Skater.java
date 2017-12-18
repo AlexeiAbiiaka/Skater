@@ -7,9 +7,7 @@ import java.util.Arrays;
  * Assignment:	Array of Skater objects
  *
  * Description:	skater class has an array of assessment scores and a unique id number
-                Behaviours, get id, 
-                            get average
-                            get assessment score 
+ *              Behaviors.
  * *************************************************************
  */
  
@@ -22,14 +20,29 @@ public class Skater
 	private int length = 0;
 	private Record[] records = new Record[10];
 	
+/********************************************************
+ * Purpose:        get id for Skater
+ *         
+ * Interface:
+ *     in:        id and str
+ *     out:       none
+ ********************************************************/	
 	public Skater(String id, String str) {
 		this.id = id;
 		String[] recs = str.split(" ");
 		for (int i=0; i<recs.length; i++) {
 			addRecord( new Record( recs[i] ) );
 		}
+		
 	}
 
+/********************************************************
+ * Purpose:        get average speed for skater
+ *         
+ * Interface:
+ *     in:        none
+ *     out:       average
+ ********************************************************/	
 	public double getAverageSpeed() {
 		double avg = 0;
 		for (int i = 0; i < length; i++) {                
@@ -41,6 +54,14 @@ public class Skater
 		return avg;
 	}
 	
+/********************************************************
+ * Purpose:       shifts numbers if longer than 10
+ * 				  numbers
+ *         
+ * Interface:
+ *     in:        record
+ *     out:       none
+ ********************************************************/	
 	public void addRecord(Record record) {
 		if (length==10) {
 			for (int i = 0; i < records.length - 1; i++) {                
@@ -53,6 +74,24 @@ public class Skater
 		}
 	}
 	
+/********************************************************
+ * Purpose:       get specific time/record
+ *         
+ * Interface:
+ *     in:        none
+ *     out:       records
+ ********************************************************/	
+	public Record getRecord(int ri) {
+		return records[ri];
+	}
+	
+/********************************************************
+ * Purpose:       print out all data
+ *         
+ * Interface:
+ *     in:        none
+ *     out:       sb.toString
+ ********************************************************/	
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
 		for (int i=0; i<length; i++) {
@@ -63,10 +102,24 @@ public class Skater
 		return sb.toString();
 	}
 
+/********************************************************
+ * Purpose:        get id for Skater
+ *         
+ * Interface:
+ *     in:        none
+ *     out:       id
+ ********************************************************/	
 	public String getId() {
 		return id;
 	}
 
+/********************************************************
+ * Purpose:        set id for Skater
+ *         
+ * Interface:
+ *     in:        string id
+ *     out:       none
+ ********************************************************/	
 	public void setId(String id) {
 		this.id = id;
 	}
