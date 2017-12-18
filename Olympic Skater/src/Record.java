@@ -24,7 +24,11 @@ public class Record {
  *     out:       speed in km/h 
  ********************************************************/
 	public double getSpeed() {
-		return 5d / (min * 60 + sec) / 3600;
+		double s1=(min * 60 + sec);		
+		double s2=s1/3600;
+		double s3=5000/s2;
+		double s4=s3/1000;
+		return s4;
 	}
 	
 /********************************************************
